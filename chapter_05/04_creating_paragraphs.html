@@ -8,13 +8,14 @@
 	<body>
 		<script type="text/javascript">
 		
-			var dataset = [ 5, 10, 15, 20, 25 ];
+			var dataset = [ 5, 10, 15, 20, 25 ]; // glbl vrbl
 			
 			d3.select("body").selectAll("p")
-				.data(dataset)
+				.data(dataset) // loop thrgh ea elmnt
+                // If data elmnts exceed DOM elmnts enter() will assgn frthr new DOM elmnts.
 				.enter()
 				.append("p")
-				.text("New paragraph!");
+				.text(function(d) { return d; }); // call annymous fnctn
 			
 		</script>
 	</body>
